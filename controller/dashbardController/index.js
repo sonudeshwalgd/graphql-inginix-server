@@ -3,7 +3,7 @@ const { dashboardService } = require("../../service")
 async function postProduct(req,res){
     try {
         const data={
-            name:req.body?.name,
+            title:req.body?.title,
             img:req.body?.img,
             currency:req.body?.currency,
             price:req.body?.price,
