@@ -7,7 +7,9 @@ async function postProduct(req,res){
             img:req.body?.img,
             currency:req.body?.currency,
             price:req.body?.price,
-            category:req?.body?.category
+            category:req?.body?.category,
+            description:req?.body?.description,
+            id:req?.body?.id,
         }
 
        const response=await dashboardService.postProductService(data)

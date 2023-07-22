@@ -2,14 +2,14 @@ const mongoose=require("mongoose")
 
 const product = new mongoose.Schema({
 
-name:{
+  title:{
     type:String,
-    required: [true, 'User name is required'],
+    required: [true, 'Title is required'],
     validate: {
         validator: function(v) {
           return /^[A-Za-z]+(?:\s[A-Za-z]+)*$/.test(v);
         },
-        message: props => `${props.value} is not a valid name`
+        message: props => `${props.value} is not a valid title`
       },
   },
 
@@ -37,16 +37,12 @@ price:{
 currency:{
     type:String,
     required: [true, 'Currency is required'],
-    validate: {
-        validator: function(v) {
-          return /^[A-Za-z0-9\s]+$/.test(v);
-        },
-        message: props => `${props.value} is not a valid currency`
-      },
     },
 category:{
     type:String
-    }
+    },
+id:String,
+description:String
 })
 
 
